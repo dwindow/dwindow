@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dx9_resize_window", "dx9_resize_window.vcproj", "{571D0F90-0421-454D-8795-3CDC19C14A4F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A} = {EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PixelShaderCompiler", "PixelShaderCompiler.vcproj", "{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{571D0F90-0421-454D-8795-3CDC19C14A4F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{571D0F90-0421-454D-8795-3CDC19C14A4F}.Debug|Win32.Build.0 = Debug|Win32
+		{571D0F90-0421-454D-8795-3CDC19C14A4F}.Release|Win32.ActiveCfg = Release|Win32
+		{571D0F90-0421-454D-8795-3CDC19C14A4F}.Release|Win32.Build.0 = Release|Win32
+		{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}.Debug|Win32.Build.0 = Debug|Win32
+		{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}.Release|Win32.ActiveCfg = Release|Win32
+		{EF2B10D1-DEBD-4FF1-AE1F-713531B7AC0A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

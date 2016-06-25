@@ -1,0 +1,8 @@
+a = ImageSource("hd.bmp", start=1,end=1)
+b = invert(a)
+c = a+b+a+b+a+b
+c = c+c+c+c+c+c
+c = c+c+c+c+c+c
+c = c+c+c+c+c+c
+
+return c+c+c+c+c+c

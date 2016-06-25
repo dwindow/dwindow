@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thumbnail", "Thumbnail.vcproj", "{C97516F6-7958-4994-8297-5BEA89FE27C7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client", "test_client.vcproj", "{DF4CDDB5-7E57-4274-B839-7BB9A5E5DCB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C97516F6-7958-4994-8297-5BEA89FE27C7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C97516F6-7958-4994-8297-5BEA89FE27C7}.Debug|Win32.Build.0 = Debug|Win32
+		{C97516F6-7958-4994-8297-5BEA89FE27C7}.Release|Win32.ActiveCfg = Release|Win32
+		{C97516F6-7958-4994-8297-5BEA89FE27C7}.Release|Win32.Build.0 = Release|Win32
+		{DF4CDDB5-7E57-4274-B839-7BB9A5E5DCB1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF4CDDB5-7E57-4274-B839-7BB9A5E5DCB1}.Debug|Win32.Build.0 = Debug|Win32
+		{DF4CDDB5-7E57-4274-B839-7BB9A5E5DCB1}.Release|Win32.ActiveCfg = Release|Win32
+		{DF4CDDB5-7E57-4274-B839-7BB9A5E5DCB1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

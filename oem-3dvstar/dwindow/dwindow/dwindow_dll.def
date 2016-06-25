@@ -1,0 +1,4 @@
+LIBRARY	"dwindow_dll"
+EXPORTS
+dwindow_dll_init
+dwindow_dll_go

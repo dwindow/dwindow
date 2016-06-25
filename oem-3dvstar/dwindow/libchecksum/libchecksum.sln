@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libchecksum", "libchecksum.vcproj", "{1D4095C1-D352-40B1-8961-7DAF12FB38D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "empty", "empty.vcproj", "{4C42F70A-3497-4B9F-8850-ED1DEF413E89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release_mt|Win32 = Release_mt|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Debug|Win32.Build.0 = Debug|Win32
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Release_mt|Win32.ActiveCfg = Release_mt|Win32
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Release_mt|Win32.Build.0 = Release_mt|Win32
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Release|Win32.ActiveCfg = Release|Win32
+		{1D4095C1-D352-40B1-8961-7DAF12FB38D1}.Release|Win32.Build.0 = Release|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Debug|Win32.Build.0 = Debug|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Release_mt|Win32.ActiveCfg = Release|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Release_mt|Win32.Build.0 = Release|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Release|Win32.ActiveCfg = Release|Win32
+		{4C42F70A-3497-4B9F-8850-ED1DEF413E89}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

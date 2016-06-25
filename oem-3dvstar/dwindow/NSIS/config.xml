@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<NSISEditer>
+    <BaseConfig>
+        <ShowMaximized Val="0" />
+        <CaptionShowFName Val="0" />
+        <OpenLastFiles Val="1" />
+        <CodeViewLeft Val="1" />
+        <ShowToolbar Val="1" />
+        <ShowSatusbar Val="1" />
+        <ShowCodeTree Val="1" />
+        <ShowCodeView Val="0" />
+        <TabSize Val="4" />
+        <TabSpace Val="1" />
+        <ShowLineNumber Val="1" />
+        <ShowHotCurLine Val="1" />
+        <HotCurLineColor Val="16771304" />
+        <Compressor Val="0" />
+        <CompilePath Val="" />
+        <HelpPath Val="" />
+        <Defs Val="" />
+        <DisNsh Val="0" />
+        <DisNsi Val="0" />
+        <SaveCompile Val="1" />
+    </BaseConfig>
+    <RecentFiles>
+        <RF File="E:\private\dwindow_NSIS\dwindow.nsi" />
+    </RecentFiles>
+    <LastOpenFiles />
+</NSISEditer>

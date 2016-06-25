@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<NSISEditer>
+    <LexerStyles>
+        <LexerType name="nsis" desc="NSIS" ext="">
+            <WordsStyle name="DEFAULT" styleID="0" fgColor="000000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="COMMENTLINE" styleID="1" fgColor="008000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="STRING DOUBLE QUOTE" styleID="2" fgColor="808080" bgColor="EEEEEE" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="STRING LEFT QUOTE" styleID="3" fgColor="FFFF80" bgColor="C0C0C0" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="STRING RIGHT QUOTE" styleID="4" fgColor="3A3A3A" bgColor="C0C0C0" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="FUNCTION" styleID="5" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" keywordClass="instre1" />
+            <WordsStyle name="VARIABLE" styleID="6" fgColor="FF8000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" keywordClass="instre2" />
+            <WordsStyle name="LABEL" styleID="7" fgColor="FF0000" bgColor="FFFF80" fontName="Courier New" fontStyle="0" fontSize="10" keywordClass="type1" />
+            <WordsStyle name="USER DEFINED" styleID="8" fgColor="FDFFEC" bgColor="FF80FF" fontName="Courier New" fontStyle="4" fontSize="10" keywordClass="type2" />
+            <WordsStyle name="SECTION" styleID="9" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="SUBSECTION" styleID="10" fgColor="000000" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="IF DEFINE" styleID="11" fgColor="808040" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="MACRO" styleID="12" fgColor="800000" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="STRING VAR" styleID="13" fgColor="FF8000" bgColor="EFEFEF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="NUMBER" styleID="14" fgColor="FF0000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="SECTION GROUP" styleID="15" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="PAGE EX" styleID="16" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="FUNCTION DEFINITIONS" styleID="17" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="1" fontSize="10" />
+            <WordsStyle name="COMMENT" styleID="18" fgColor="008000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+        </LexerType>
+    </LexerStyles>
+</NSISEditer>

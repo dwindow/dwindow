@@ -1,0 +1,482 @@
+sampler s0 : register(s0);
+sampler s1 : register(s1);
+sampler s2 : register(s2);
+sampler s3 : register(s3);
+sampler s4 : register(s4);
+sampler s5 : register(s5);
+sampler s6 : register(s6);
+sampler s7 : register(s7);
+
+float4 p0 : register(c0);
+float4 p1 : register(c1);
+float4 p2 : register(c2);
+
+#define PI acos(-1)
+
+#define width (p0[0])
+#define height (p0[1])
+#define t_width (p0[2])
+#define t_height (p0[3])
+
+#define additional_alpha (p1[2])
+#define repeat_y (p0[1])
+
+#define dx (1/width)
+#define dy (1/height)
+#define px (1/t_width)
+#define py (1/t_height)
+
+#define time1 (p1[0])
+#define time2 (p1[1])
+
+float4 main(float2 tex : TEXCOORD0) : COLOR
+{
+	if (tex.x > 0.5) tex.x -= 0.5;
+	return tex2D(s0, tex);
+
+	//float c0 = 1-dot(tex2D(s0, tex), float4(0.299, 0.587, 0.114, 0));	
+	//float c0 = dot(tex2D(s0, tex), float4(0.333, 0.333, 0.333, 0));	
+	//return float4(c0, c0, c0, 1);
+
+	//float4 c0 = float4(1, 1, 1, 2) - tex2D(s0, tex);
+	//return c0;
+
+	//return float4(1,tex.x,tex.y,1);
+}
+
+float4 alpha_only(float2 tex : TEXCOORD0) : COLOR
+{
+	return tex2D(s0, tex) * additional_alpha;
+}
+
+float4 yuv2rgb(float4 yuv)
+{
+	yuv.r -= 16.0/255.0;
+	yuv.g -= 128.0/255.0;
+	yuv.b -= 128.0/255.0;
+//		Y', U, V
+// R
+// G
+// B
+
+
+// // BT.601 in avisynth
+//     R'= Y' + 0.000*U' + 1.402*V'
+//     G'= Y' - 0.344*U' - 0.714*V'
+//     B'= Y' + 1.772*U' + 0.000*V'			
+
+	float4x4 coeffsRec601=
+	{
+		 1.164, 0.000, 1.596, 0.000,		// with Y' adjust to [16,235], UV adjust to [16,240]
+		 1.164,-0.391,-0.813, 0.000,
+		 1.164, 2.018, 0.000, 0.000,
+		 0.000, 0.000, 0.000, 1.000
+	};
+
+// BT.709 in avisynth
+//     R'= Y' + 0.0000*Cb + 1.5750*Cr
+//     G'= Y' - 0.1870*Cb - 0.4678*Cr
+//     B'= Y' + 1.8558*Cb + 0.0000*Cr
+
+	float4x4 coeffsRec709=
+	{
+		 1.1644, 0.0000, 1.7930, 0.0000,
+		 1.1644,-0.2129,-0.5325, 0.0000,
+		 1.1644, 2.1126, 0.0000, 0.0000,
+		 0.0000, 0.0000, 0.0000, 1.0000
+	};
+
+	
+	return (mul(coeffsRec709,yuv));
+}
+
+float4 main3(float2 tex : TEXCOORD0) : COLOR
+{
+	float2 texY = tex;
+	texY.y /= 1.5;
+
+	float2 texV = tex;
+	texV.y = texV.y / 6.0 + (2.0/3.0);
+
+	float2 texU = tex;
+	texU.y = texU.y / 6.0 + (2.5/3.0);
+	
+	//return tex2D(s0, tex);
+	return yuv2rgb(float4(tex2D(s0, texY).r, tex2D(s0, texV).r, tex2D(s0, texU).r, 1));
+}
+
+float2 Y2Tex(float2 Y)
+{
+	float xx = Y.x/t_width + 0.5/t_width;
+	float yy = Y.y/t_height + 0.5/t_height;
+	return float2(xx, yy);
+}
+
+float4 NV12toRGB_1plane(float2 tex : TEXCOORD0) : COLOR		//NV12
+{
+	int x1 = floor((tex.x - 0.5/width) * width + 0.5);
+	int y1 = floor((tex.y - 0.5/height) * height + 0.5);		// (x1,y1) : coordinate in Y plane
+	
+	int x2 = x1/2;
+	int y2 = y1/2;
+	
+	int x3 = x2*2;
+	int y3 = y2;
+	
+	float2 tex_y = Y2Tex(float2(x1, y1));
+	float2 tex_v = Y2Tex(float2(x3+1, y3+height));
+	float2 tex_u = Y2Tex(float2(x3, y3+height));
+		
+	return yuv2rgb(float4(tex2D(s0, tex_y).r, tex2D(s0, tex_u).r, tex2D(s0, tex_v).r, 1));
+}
+
+float4 planar_rgb_yv12(float2 tex : TEXCOORD0) : COLOR
+{
+	int x1 = floor((tex.x - 0.5/width) * width + 0.5);
+	int y1 = floor((tex.y - 0.5/height) * height + 0.5);		// (x1,y1) : coordinate in Y plane
+	
+	int x2 = x1/2;
+	int y2 = y1/2;
+	
+	int x3 = x2;
+	//if (y2 % 2 != 0) x3 += width/2;
+	x3 += width/2*(y2%2);
+	int y3 = y2/2;
+	
+	float2 tex_y = Y2Tex(float2(x1, y1));
+	float2 tex_v = Y2Tex(float2(x3, y3+height));
+	float2 tex_u = Y2Tex(float2(x3, y3+height*5/4));
+	
+	return yuv2rgb(float4(tex2D(s0, tex_y).r, tex2D(s0, tex_u).r, tex2D(s0, tex_v).r, 1));
+}
+
+
+
+float4 YUY2toRGB(float2 tex : TEXCOORD0) : COLOR
+{
+	if (time2<=time1 || time2-time1>2000 || time2<0.1)
+		return tex2D(s0, tex);
+		
+	float4 uv = tex2D(s0, tex);		//u:1,v:3
+	int x2 = floor((tex.x - 0.5/(width)) * (width) + 0.5);
+	
+	int x = floor((tex.x - 0.5/t_width) * t_width + 0.5);
+	float x1 = x/t_width + 0.5/t_width;
+	float4 y4 = tex2D(s0, float2(x1, tex.y));
+		
+	if (x2%2==0)
+		return yuv2rgb(float4(y4[2], uv[1], uv[3],1));
+	else
+		return yuv2rgb(float4(y4[0], uv[1], uv[3],1));
+		
+	return yuv2rgb(float4(tex2D(s0, tex)[0], tex2D(s1, tex)[1], tex2D(s1, tex)[3], 1));
+}
+
+#define left_eye_a			(p0[0])
+#define left_eye_r			(p0[1])
+#define left_eye_g			(p0[2])
+#define left_eye_b			(p0[3])
+
+#define right_eye_a			(p1[0])
+#define right_eye_r			(p1[1])
+#define right_eye_g			(p1[2])
+#define right_eye_b			(p1[3])
+
+float4 anaglyph(float2 tex : TEXCOORD0) : COLOR
+{
+	//float2 delta = float2((1-tex.y)*0.004+0.002, 0);
+	//float2 delta = 0;
+
+	float4 l = tex2D(s0, tex);
+	float4 r = tex2D(s1, tex);
+	
+	r.r = 0;
+	//l.r = 0.299 * l.r + 0.587 * l.g + 0.114 * l.b;
+	l.g = 0;
+	l.b = 0;
+	
+	return l + r;
+}
+
+float4 masking(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 mask = tex2D(s0, tex);
+	float4 l = tex2D(s1, tex);
+	float4 r = tex2D(s2, tex);
+	
+	return l*(1-mask) + r*mask;
+}
+
+float4 NV12toRGB(float2 tex : TEXCOORD0) : COLOR		//NV12
+{
+	if (time2<=time1 || time2-time1>2000 || time2<0.1)
+		return tex2D(s0, tex);
+		
+	return yuv2rgb(float4(tex2D(s0, tex)[0], tex2D(s1, tex)[0], tex2D(s1, tex)[3], 1)) * additional_alpha;
+}
+
+float4 P016toRGB(float2 tex : TEXCOORD0) : COLOR		//16bit YUV
+{
+	if (time2<=time1 || time2-time1>2000 || time2<0.1)
+		return tex2D(s0, tex);
+		
+	return yuv2rgb(float4(tex2D(s0, tex)[0], tex2D(s1, tex).r, tex2D(s1, tex).g, 1)) * additional_alpha;
+}
+
+float4 YV12toRGB(float2 tex : TEXCOORD0) : COLOR
+{	
+	if (time2<=time1 || time2-time1>2000 || time2<0.1)
+		return tex2D(s0, tex);
+		
+	float2 tex_v = {tex.x, tex.y/2};
+	float2 tex_u = {tex.x, tex.y/2+0.5};
+	return yuv2rgb(float4(tex2D(s0, tex)[0], tex2D(s1, tex_u)[0], tex2D(s1, tex_v)[0], 1))  * additional_alpha;
+}
+
+#define tx (p0[0])
+#define ty (p0[1])
+#define sx (p0[2])
+#define sy (p0[3])
+
+#define cx (p1[0])
+#define cy (p1[1])
+#define rx (p1[2])
+#define ry (p1[3])
+
+#define v (p2[0])
+#define a (p2[1])
+float4 UI(float2 tex : TEXCOORD0) : COLOR
+{
+	float2 sv = {sx/tx, sy/ty};
+	float2 cv = {cx/tx, cy/ty};
+	
+	float2 pv = {frac(tex.x*rx)*cv.x, frac(tex.y*ry)*cv.y};
+	pv += sv;
+	if (tex.x>v)
+		pv += cv;
+	
+	float4 o = tex2D(s0, pv);
+	o[3] *= a;
+	return o;
+}
+
+
+// vs_subtitle
+
+#define sx2 (p0[0])
+#define sy2 (p0[1])
+#define cx2 (p0[2])
+#define cy2 (p0[3])
+#define tsx (p1[0])
+#define tsy (p1[1])
+#define tcx (p1[2])
+#define tcy (p1[3])
+struct VS_OUTPUT
+{
+	float4 position : POSITION;
+	float2 tex : TEXCOORD0;
+};
+VS_OUTPUT vs_subtitle(VS_OUTPUT IN)
+{
+	VS_OUTPUT o;
+	o.position.z = IN.position.z;
+	o.position.w = 1;
+	o.position.x = IN.position.x * cx2 + sx2;
+	o.position.y = IN.position.y * cy2 + sy2;
+	o.tex.x = IN.tex.x * tcx + tsx;
+	o.tex.y = IN.tex.y * tcy + tsy;
+	
+	return o;
+}
+
+
+// IZ3D
+float4 iz3d_front(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 l = tex2D(s0, tex);
+	float4 r = tex2D(s1, tex);
+	
+	float ly = 0.299 * l.r + 0.587 * l.g + 0.114 * l.b;
+	float ry = 0.299 * r.r + 0.587 * r.g + 0.114 * r.b;
+
+	float o = 0.5;
+	
+	if (ly + ry > 0.02)
+		o = ry/(ly+ry);
+	
+	return o;
+	return o * (l+r);
+}
+
+float4 iz3d_back(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 l = tex2D(s0, tex);
+	float4 r = tex2D(s1, tex);
+	
+	return (l+r)/2;
+}
+
+
+// simple yuv-rgb convertion
+float4 rgb2yuv2(float4 rgb)
+{
+	float4x4 coeffs=
+		{
+			 0.299, 0.587, 0.114, 0.000,
+			-0.147,-0.289, 0.436, 0.000,
+			 0.615,-0.515,-0.100, 0.000,
+			 0.000, 0.000, 0.000, 0.000
+		};
+		
+	return mul(coeffs,rgb);
+}
+
+float4 yuv2rgb2(float4 yuv)
+{
+	float4x4 coeffs=
+		{
+			 1.000, 0.000, 1.140, 0.000,
+			 1.000,-0.395,-0.581, 0.000,
+			 1.000, 2.032, 0.000, 0.000,
+			 0.000, 0.000, 0.000, 0.000
+		};
+	
+	return mul(coeffs,yuv);
+}
+
+
+#define saturation (p0[0])
+#define luminance (p0[1])
+#define hue01 (p0[2])
+#define contrast (p0[3])
+
+float4 color_adjust(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 rgb = tex2D(s0, tex);
+	float4 yuv = rgb2yuv2(rgb);
+	float final_alpha = rgb[3];
+	
+	float sat = exp((saturation - 0.5)*(saturation>0.5?3:3));	// 
+	float lum = luminance - 0.5;	// 
+	float hue = (hue01 - 0.5) * 2 * PI;	// 
+	float con = exp((contrast - 0.5)*(contrast>0.5?1:1));	// 
+	
+	// do hue and sat in yuv color space	
+	
+	// hue
+	float gg = (yuv.g) * cos(hue) - (yuv.b) * sin(hue);
+	float bb = (yuv.b) * cos(hue) + (yuv.g) * sin(hue);
+	yuv.g = gg;
+	yuv.b = bb;
+	
+	// saturation
+	yuv.g *= sat;
+	yuv.b *= sat;
+
+	// do lum and con in rgb color space
+	rgb = yuv2rgb2(yuv);
+	
+	// luminance
+	rgb += lum;
+	
+	// contrast
+	rgb.r = 0.5 + (rgb.r-0.5) * con;
+	rgb.g = 0.5 + (rgb.g-0.5) * con;
+	rgb.b = 0.5 + (rgb.b-0.5) * con;
+	
+	// reset alpha
+	rgb[3] = final_alpha;
+	
+	return rgb;
+}
+
+float4 clipfunc(float4 i)
+{
+	float4 o = i;
+	//o.a = i.a;
+	o.r = i.r >= 1 ? 0: i.r;
+	o.g = i.g >= 1 ? 0: i.g;
+	o.b = i.b >= 1 ? 0: i.b;
+	
+	return o;
+}
+
+float4 multiview4(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 mask = tex2D(s0, tex);
+	
+	float4 c1 = tex2D(s1, tex);
+	float4 c2 = tex2D(s2, tex);
+	float4 c3 = tex2D(s3, tex);
+	float4 c4 = tex2D(s4, tex);
+		
+	float4 f1 = clamp(mask*4, 0, 1);
+	float4 f2 = clamp(mask*4, 1, 2) - 1;
+	float4 f3 = clamp(mask*4, 2, 3) - 2;
+	float4 f4 = clamp(mask*4, 3, 4) - 3;
+	
+
+	f1 = clipfunc(f1);
+	f2 = clipfunc(f2);
+	f3 = clipfunc(f3);
+	f4 = clipfunc(f4);
+	
+	float4 o = 0;
+	o  = c1 * f1;
+	o += c2 * f2;
+	o += c3 * f3;
+	o += c4 * f4;
+		
+	return o;	
+}
+
+float4 clipfunc2(float4 i)
+{
+	float4 o = i;
+// 	o.a = 1;
+	o.r = i.r >= 1 ? 0: i.r;
+	o.g = i.g >= 1 ? 0: i.g;
+	o.b = i.b >= 1 ? 0: i.b;
+
+	o.r = i.r > 0.1 ? 1: i.r;
+	o.g = i.g > 0.1 ? 1: i.g;
+	o.b = i.b > 0.1 ? 1: i.b;
+	
+	return o;
+}
+
+float4 multiview6(float2 tex : TEXCOORD0) : COLOR
+{
+	float4 mask = tex2D(s0, tex);
+	
+	float4 c1 = tex2D(s1, tex);
+	float4 c2 = tex2D(s2, tex);
+	float4 c3 = tex2D(s3, tex);
+	float4 c4 = tex2D(s4, tex);
+	float4 c5 = tex2D(s5, tex);
+	float4 c6 = tex2D(s6, tex);
+		
+	float4 f1 = clamp(mask*7, 1, 2) - 1;
+	float4 f2 = clamp(mask*7, 2, 3) - 2;
+	float4 f3 = clamp(mask*7, 3, 4) - 3;
+	float4 f4 = clamp(mask*7, 4, 5) - 4;
+	float4 f5 = clamp(mask*7, 5, 6) - 5;
+	float4 f6 = clamp(mask*7, 6, 7) - 6;
+	
+	f1 = clipfunc2(f1);
+	f2 = clipfunc2(f2);
+	f3 = clipfunc2(f3);
+	f4 = clipfunc2(f4);
+	f3 = clipfunc2(f5);
+	f4 = clipfunc2(f6);
+	
+	float4 o = 0;
+	o  = c1 * f1;
+	o += c2 * f2;
+	o += c3 * f3;
+	o += c4 * f4;
+	o += c5 * f5;
+	o += c6 * f6;
+		
+	return o;
+}

@@ -1,0 +1,210 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource1.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource1.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ZHUZHU_AUDIO DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Stereo",ID_STEREO,"Button",BS_AUTORADIOBUTTON,45,49,455,34
+    CONTROL         "5.1 Channel",ID_51,"Button",BS_AUTORADIOBUTTON,45,105,455,34
+    CONTROL         "7.1 Channel",ID71,"Button",BS_AUTORADIOBUTTON,45,159,455,34
+    CONTROL         "Bitstreaming",ID_BITSTREAMING,"Button",BS_AUTORADIOBUTTON,45,210,455,34
+    PUSHBUTTON      "OK",IDOK,374,10,65,25
+    PUSHBUTTON      "Cancel",IDCANCEL,455,10,65,25
+END
+
+IDD_ZHUZHU_AUDIO_DEVICE DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Device1",IDC_DEVICE1,"Button",BS_AUTORADIOBUTTON,45,49,455,34
+    CONTROL         "Device2",IDC_DEVICE2,"Button",BS_AUTORADIOBUTTON,45,105,455,34
+    CONTROL         "Device3",IDC_DEVICE3,"Button",BS_AUTORADIOBUTTON,45,159,455,34
+    CONTROL         "Device4",IDC_DEVICE4,"Button",BS_AUTORADIOBUTTON,45,210,455,34
+    PUSHBUTTON      "OK",IDOK,374,10,65,25
+    PUSHBUTTON      "Cancel",IDCANCEL,455,10,65,25
+END
+
+IDD_ZHUZHU_VIDEO DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "AMD HD3D",IDC_HD3D,"Button",BS_AUTORADIOBUTTON,45,49,455,34
+    CONTROL         "Dual Projector",IDC_DUALPROJECTOR,"Button",BS_AUTORADIOBUTTON,45,105,455,34
+    PUSHBUTTON      "OK",IDOK,374,10,65,25
+    PUSHBUTTON      "Cancel",IDCANCEL,455,10,65,25
+    COMBOBOX        IDC_OUTPUT1,184,159,256,20,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Output 1",IDC_STATIC,83,160,96,15
+    COMBOBOX        IDC_OUTPUT2,184,187,256,20,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Output 2",IDC_STATIC,83,188,96,15
+END
+
+IDD_ZHUZHU_SYSTEM DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Audio Mode",IDC_AUDIO_MODE,27,33,208,37
+    PUSHBUTTON      "Audio Device",IDC_AUDIO_DEVICE,27,80,208,37
+    PUSHBUTTON      "Video Device",IDC_VIDEO_DEVICE,27,129,208,37
+    PUSHBUTTON      "Network",IDC_NETWORK,29,174,208,37
+    PUSHBUTTON      "OK",IDOK,374,10,65,25
+    PUSHBUTTON      "Cancel",IDCANCEL,455,10,65,25
+END
+
+IDD_ZHUZHU_NETWORK DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Auto (DHCP)",IDC_DHCP,"Button",BS_AUTORADIOBUTTON,45,49,278,34
+    CONTROL         "Manual",IDC_MANUAL,"Button",BS_AUTORADIOBUTTON,45,105,280,34
+    PUSHBUTTON      "OK",IDOK,374,10,65,25
+    PUSHBUTTON      "Cancel",IDCANCEL,455,10,65,25
+    LTEXT           "IP",IDC_STATIC,50,147,37,21
+    EDITTEXT        IDC_IP1,90,143,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_IP2,160,143,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_IP3,230,143,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_IP4,300,143,60,22,ES_AUTOHSCROLL
+    PUSHBUTTON      "1",IDC_1,404,50,35,35
+    PUSHBUTTON      "2",IDC_2,444,50,35,35
+    PUSHBUTTON      "3",IDC_3,484,50,35,35
+    PUSHBUTTON      "4",IDC_4,404,90,35,35
+    PUSHBUTTON      "5",IDC_5,444,90,35,35
+    PUSHBUTTON      "6",IDC_6,484,90,35,35
+    PUSHBUTTON      "7",IDC_7,404,130,35,35
+    PUSHBUTTON      "8",IDC_8,444,130,35,35
+    PUSHBUTTON      "9",IDC_9,484,130,35,35
+    PUSHBUTTON      "0",IDC_0,364,50,35,35
+    PUSHBUTTON      "<-",IDC_B,364,90,35,35
+    LTEXT           "Subnet Mask",IDC_STATIC,49,179,37,21
+    EDITTEXT        IDC_MASK1,89,175,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MASK2,159,175,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MASK3,229,175,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MASK4,299,175,60,22,ES_AUTOHSCROLL
+    LTEXT           "Gateway",IDC_STATIC,49,210,37,21
+    EDITTEXT        IDC_GATE1,89,206,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GATE2,159,206,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GATE3,229,206,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GATE4,299,206,60,22,ES_AUTOHSCROLL
+    LTEXT           "DNS",IDC_STATIC,49,238,37,21
+    EDITTEXT        IDC_DNS1,89,234,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DNS2,159,234,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DNS3,229,234,60,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DNS4,299,234,60,22,ES_AUTOHSCROLL
+END
+
+IDD_ZHUZHU_MAIN DIALOGEX 0, 0, 538, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "System Settings",IDC_SYSTEM,408,6,60,26
+    PUSHBUTTON      "Shutdown",IDCANCEL,472,6,56,25
+    CONTROL         "",IDC_ZHU_PROGRESS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,99,59,332,15
+    LTEXT           "静态",IDC_ZHU_TOTAL,438,62,79,13
+    LTEXT           "静态",IDC_ZHU_CURRENT,22,61,76,15
+    PUSHBUTTON      "Open File...",IDC_ZHUZHU_OPEN,31,122,43,40
+    PUSHBUTTON      "Open BluRay3D",IDC_ZHU_BLURAY,75,122,43,40
+    PUSHBUTTON      "Swap Left/Right",IDC_ZHU_SWAP,119,122,43,40
+    PUSHBUTTON      "Stop",IDC_ZHU_STOP,163,122,43,40
+    PUSHBUTTON      "Play",IDC_ZHU_PLAY,206,122,43,40
+    PUSHBUTTON      "Fullscreen",IDC_ZHU_FULL,249,122,43,40
+    PUSHBUTTON      "Audio",IDC_ZHU_AUDIO,294,121,43,40
+    PUSHBUTTON      "Adjust Color...",IDC_ZHU_COLOR,338,121,43,40
+    PUSHBUTTON      "Subtitle",IDC_ZHU_SUBTITLE,382,121,43,40
+    CONTROL         "",IDC_ZHU_parallax,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,66,187,201,15
+    CONTROL         "",IDC_ZHU_POS_Y,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,66,242,201,15
+    CONTROL         "",IDC_ZHU_POS_X,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,66,215,201,15
+    CONTROL         "",IDC_ZHU_VOLUME,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,397,190,120,17
+    PUSHBUTTON      "3D",IDC_3D,19,185,43,40
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ZHUZHU_SYSTEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 294
+    END
+
+    IDD_ZHUZHU_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 294
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "srt_parser", "srt_parser.vcproj", "{CECB9B4D-C745-4481-8224-CDBA83F40FAF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		Release_mt = Release_mt
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Debug.ActiveCfg = Debug|Win32
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Debug.Build.0 = Debug|Win32
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Release.ActiveCfg = Release|Win32
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Release.Build.0 = Release|Win32
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Release_mt.ActiveCfg = Release_mt|Win32
+		{CECB9B4D-C745-4481-8224-CDBA83F40FAF}.Release_mt.Build.0 = Release_mt|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
