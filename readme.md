@@ -6,7 +6,7 @@
 
 方法2：
 
-这个新版本怎么老崩溃，我想要老版本运行起来！
+这个新版本好像跟我原来用的版本哪里不太一样？我想要老版本运行起来！
 
 没关系，下载这个[官方破解器](https://github.com/dwindow/dwindow/raw/master/binary/crack.exe)继续high。
 
