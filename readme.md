@@ -2,7 +2,7 @@
 
 方法1：
 
-下载一个[最新的完全离线完全全功能的版本](https://github.com/dwindow/dwindow/raw/master/binary/(final)bo3d160630.exe) 继续high
+下载一个[最新的完全离线完全全功能的版本](https://github.com/dwindow/dwindow/raw/master/binary/bo3d20160623(final).exe) 继续high
 
 方法2：
 
