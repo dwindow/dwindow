@@ -8,8 +8,8 @@
 
 这个新版本好像跟我原来用的版本哪里不太一样？我想要老版本运行起来！
 
-没关系，下载这个[官方破解器](https://github.com/dwindow/dwindow/raw/master/binary/crack.exe)继续high。
+没关系，下载这个[官方离线激活器](https://github.com/dwindow/dwindow/raw/master/binary/crack.exe)继续high。
 
 我想要来维护这个项目，有木有源码开放？
-
+有的，2013年8月的整理过的代码包已经放在oem-3dvstar内，编译方式见build.md
 这个稍候，现在源码略乱，待我整理下再上传上来（至少让人能正常的编译过去对吧）。
