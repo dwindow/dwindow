@@ -14,4 +14,4 @@
 
 有的，2013年8月的整理过的代码包已经放在oem-3dvstar内，编译方式见build.md
 
-最新的版本稍候，现在源码略乱，待我整理下再上传上来（至少让人能正常的编译过去对吧）。
+最新的版本见[https://github.com/my12doom/personalProjects] (https://github.com/my12doom/personalProjects)， 编译方法见 [https://github.com/my12doom/personalProjects/blob/master/build.md] (https://github.com/my12doom/personalProjects/blob/master/build.md)
