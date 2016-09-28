@@ -1,8 +1,14 @@
+2016年9月28日更新：
+
+之前一点意外状况造成“全功能离线版”的双投影功能工作不正常，现已修复，点下面的链接可下载修正的版本。
+
+
+
 3D影音由于各种各样的原因预计会停止维护，然则还喜欢这个播放器的用户怎么办呢……
 
 方法1：
 
-下载一个[最新的完全离线完全全功能的版本](https://github.com/dwindow/dwindow/raw/master/binary/(final)bo3d160701.exe) 继续high
+下载一个[最新的完全离线完全全功能的版本](https://github.com/dwindow/dwindow/raw/master/binary/(final)bo3d160928.exe) 继续high
 
 方法2：
 
