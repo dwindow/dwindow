@@ -1,23 +1,29 @@
-2016Äê9ÔÂ28ÈÕ¸üĞÂ£º
-
-Ö®Ç°Ò»µãÒâÍâ×´¿öÔì³É¡°È«¹¦ÄÜÀëÏß°æ¡±µÄË«Í¶Ó°¹¦ÄÜ¹¤×÷²»Õı³££¬ÏÖÒÑĞŞ¸´£¬µãÏÂÃæµÄÁ´½Ó¿ÉÏÂÔØĞŞÕıµÄ°æ±¾¡£
 
 
+----------
+2016å¹´9æœˆ28æ—¥æ›´æ–°ï¼š
 
-3DÓ°ÒôÓÉÓÚ¸÷ÖÖ¸÷ÑùµÄÔ­ÒòÔ¤¼Æ»áÍ£Ö¹Î¬»¤£¬È»Ôò»¹Ï²»¶Õâ¸ö²¥·ÅÆ÷µÄÓÃ»§ÔõÃ´°ìÄØ¡­¡­
 
-·½·¨1£º
+ä¹‹å‰ä¸€ç‚¹æ„å¤–çŠ¶å†µé€ æˆâ€œå…¨åŠŸèƒ½ç¦»çº¿ç‰ˆâ€çš„åŒæŠ•å½±åŠŸèƒ½å·¥ä½œä¸æ­£å¸¸ï¼Œç°å·²ä¿®å¤ï¼Œç‚¹ä¸‹é¢çš„é“¾æ¥å¯ä¸‹è½½ä¿®æ­£çš„ç‰ˆæœ¬ã€‚
 
-ÏÂÔØÒ»¸ö[×îĞÂµÄÍêÈ«ÀëÏßÍêÈ«È«¹¦ÄÜµÄ°æ±¾](https://github.com/dwindow/dwindow/raw/master/binary/(final)bo3d160928.exe) ¼ÌĞøhigh
 
-·½·¨2£º
 
-Õâ¸öĞÂ°æ±¾ºÃÏñ¸úÎÒÔ­À´ÓÃµÄ°æ±¾ÄÄÀï²»Ì«Ò»Ñù£¿ÎÒÏëÒªÀÏ°æ±¾ÔËĞĞÆğÀ´£¡
+----------
 
-Ã»¹ØÏµ£¬ÏÂÔØÕâ¸ö[¹Ù·½ÀëÏß¼¤»îÆ÷](https://github.com/dwindow/dwindow/raw/master/binary/crack.exe)¼ÌĞøhigh¡£
+3Då½±éŸ³ç”±äºå„ç§å„æ ·çš„åŸå› é¢„è®¡ä¼šåœæ­¢ç»´æŠ¤ï¼Œç„¶åˆ™è¿˜å–œæ¬¢è¿™ä¸ªæ’­æ”¾å™¨çš„ç”¨æˆ·æ€ä¹ˆåŠå‘¢â€¦â€¦
 
-ÎÒÏëÒªÀ´Î¬»¤Õâ¸öÏîÄ¿£¬ÓĞÄ¾ÓĞÔ´Âë¿ª·Å£¿
+æ–¹æ³•1ï¼š
 
-ÓĞµÄ£¬2013Äê8ÔÂµÄÕûÀí¹ıµÄ´úÂë°üÒÑ¾­·ÅÔÚoem-3dvstarÄÚ£¬±àÒë·½Ê½¼ûbuild.md
+ä¸‹è½½ä¸€ä¸ª[æœ€æ–°çš„å®Œå…¨ç¦»çº¿å®Œå…¨å…¨åŠŸèƒ½çš„ç‰ˆæœ¬](https://github.com/dwindow/dwindow/raw/master/binary/(final)bo3d160928.exe) ç»§ç»­high
 
-×îĞÂµÄ°æ±¾¼û[https://github.com/my12doom/personalProjects] (https://github.com/my12doom/personalProjects)£¬ ±àÒë·½·¨¼û [https://github.com/my12doom/personalProjects/blob/master/build.md] (https://github.com/my12doom/personalProjects/blob/master/build.md)
+æ–¹æ³•2ï¼š
+
+è¿™ä¸ªæ–°ç‰ˆæœ¬å¥½åƒè·Ÿæˆ‘åŸæ¥ç”¨çš„ç‰ˆæœ¬å“ªé‡Œä¸å¤ªä¸€æ ·ï¼Ÿæˆ‘æƒ³è¦è€ç‰ˆæœ¬è¿è¡Œèµ·æ¥ï¼
+
+æ²¡å…³ç³»ï¼Œä¸‹è½½è¿™ä¸ª[å®˜æ–¹ç¦»çº¿æ¿€æ´»å™¨](https://github.com/dwindow/dwindow/raw/master/binary/crack.exe)ç»§ç»­highã€‚
+
+æˆ‘æƒ³è¦æ¥ç»´æŠ¤è¿™ä¸ªé¡¹ç›®ï¼Œæœ‰æœ¨æœ‰æºç å¼€æ”¾ï¼Ÿ
+
+æœ‰çš„ï¼Œ2013å¹´8æœˆçš„æ•´ç†è¿‡çš„ä»£ç åŒ…å·²ç»æ”¾åœ¨oem-3dvstarå†…ï¼Œç¼–è¯‘æ–¹å¼è§build.md
+
+æœ€æ–°çš„ç‰ˆæœ¬è§[https://github.com/my12doom/personalProjects] (https://github.com/my12doom/personalProjects)ï¼Œ ç¼–è¯‘æ–¹æ³•è§ [https://github.com/my12doom/personalProjects/blob/master/build.md] (https://github.com/my12doom/personalProjects/blob/master/build.md)
